@@ -1,0 +1,33 @@
+body{
+    background:linear-gradient(hsl(0, 100%, 50%),rgb(240, 204, 204));
+    height: 100vh;
+    color: rgb(55, 255, 0);
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+button{
+    font-size: 50px;
+    border: none;
+    padding: 10px 5px 10px 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: bold;
+    width: 250px;
+    background-color: darkred;
+    border-radius: 15px;
+    
+}
+
+
+#heading{
+    margin: 0px 0px 0px 0px;
+}
+
+
