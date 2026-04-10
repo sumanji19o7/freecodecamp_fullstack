@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="heading">Scorecard</h1>
+    <div id="container">
+        <div id="hometeam">
+            <h2 class="team">Home</h2>
+            <div class="displays"><p id="homescore">0</p></div>
+            <button id="addonehome" onclick="increaseonehome()">+1</button>
+            <button id="addtwohome" onclick="increasetwohome()">+2</button>
+            <button id="addthreehome" onclick="inceasethreehome()">+3</button>
+            <button id="resethome" onclick="resethome()">Reset</button>
+        </div>        
+
+        <div id="awayteam">
+            <h2 class="team">Away</h2>
+            <div class ="displays"><p id="awayscore">0</p></div>
+            <button id="addoneaway" onclick="increaseoneaway()" >+1</button>
+            <button id="addtwoaway" onclick="increasetwoaway()">+2</button>
+            <button id="addthreeaway" onclick="inceasethreeaway()">+3</button> 
+            <button id="resetaway" onclick="resetaway()">Reset</button>
+
+
+        </div>
+    
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
