@@ -22,12 +22,25 @@ body p {
 button{
     font-size: 40px;
     height: 80px;
-    width: 200px;
-    color: yellow;
+    width: 210px;
+    color: rgb(226, 226, 12);
     background-color: green;
     border: 5px solid white;
-    box-shadow: 3px 4px 10px rgb(74, 231, 74);
+    border-radius: 10px;
+    padding: 2px;
+    margin-bottom: 20px;
+    margin-top: 10px;
     
 
     
 }
+
+button:hover{
+    background-color: rgb(6, 74, 6);
+}
+
+button:active{
+    background-color: rgb(21, 180, 21);
+}
+
+
