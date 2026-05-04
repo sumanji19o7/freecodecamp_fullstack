@@ -1,0 +1,33 @@
+body{
+    background-color: rgb(25, 25, 90);
+    margin: 50px 50px 50px 50px;
+}
+
+#mainheading{
+    color:rgb(244, 247, 245);
+    font-family: sans-serif;
+    font-size: 55px;
+}
+
+#genpassheading{
+    color: rgb(31, 184, 131);
+    font-family: sans-serif;
+    font-size: 45px;
+}
+
+#subheading{
+    color: white;
+    font-family: sans-serif;
+}
+
+#generatebtn{
+    margin-top: 20px;
+    width: 350px;
+    height: 60px;
+    font-size: 25px;
+    border-radius: 10px;
+    background-color:rgb(31, 184, 131);
+    color: white;
+    font-style: bold;
+}
+
