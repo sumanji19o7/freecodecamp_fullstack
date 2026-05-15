@@ -23,3 +23,17 @@ function gethand(){
 }
 
 console.log( gethand ())
+
+let data =[
+    {
+        player : "Jane",
+        score:52
+    },
+
+    {
+        player : "Mark",
+        score:41
+    }
+]
+
+console.log( data[1].score )
