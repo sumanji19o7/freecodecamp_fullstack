@@ -20,7 +20,7 @@ function renderStockData(stockproperties){
 
     
 
-    console.log(name)
+    
     stockname.innerText = "Name: " + name 
     stocksymbol.innerText = "Symbol: " + sym
     stockprice.innerText = "Price: " + price + arrow
