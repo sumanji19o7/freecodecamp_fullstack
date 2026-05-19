@@ -95,8 +95,9 @@ function checkUsername(username){
        throw new Error('no username provided')
 
        // throw new Error gives error in red
-       // console.log() gives error in plain string
+       // console.log() gives error in plain stringb
     }
 }
 
 checkUsername()
+
