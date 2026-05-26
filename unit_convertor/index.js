@@ -9,13 +9,20 @@ let inputnum = document.getElementById("numberinput")
 /*
 1 metre = 3.281 feet
 1 litre = 0.264 gallon
-1 kilogram = 2.204
+1 kilogram = 2.204 pounds
 
 */
 
 convertbtn.addEventListener("click", function(){
-    let number = Number(inputnum.value)
-    let       
+    const number = Number(inputnum.value)
+    let lengthfeet = number * 3.281
+    let volumegallon = number * 0.264
+    let masspound = number * 2.204
+    
+    lengthstring.innerHTML = `<p>${number} metre | equal to ${lengthfeet} feet</p>`
+    volumestring.innerHTML = `<p>${number} litre | equal to ${volumegallon} feet</p>`
+    massstring.innerHTML = `<p>${number} kilogram | equal to ${masspound} feet</p>`
+    
     
 
 })

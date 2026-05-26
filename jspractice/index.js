@@ -1,7 +1,8 @@
+import {itemsbrought} from "/itemsbrought.js"
+
 const images = [
     "image1.png",
     "image2.png",
-    
 ]
 
 const container = document.getElementById("container")
@@ -23,6 +24,7 @@ console.log(message)
 
 
 const items = "coffee"
+let price
 
 switch (items){
     case 'coffee':
@@ -86,7 +88,7 @@ console.log(datesnapshot.getFullYear())
 
 const name = `Brock`
 
-function checkUsername(username){
+/*function checkUsername(username){
     if (username){
         console.log()
     }
@@ -99,5 +101,71 @@ function checkUsername(username){
     }
 }
 
-checkUsername()
+checkUsername()*/
+
+//different type of function, parameters and arguments
+//arrow functions
+
+// arrow function --
+// const getSpendAlert = () => {
+//   }
+
+const getSpendAlert = (name,amount) => {
+    return ` Hey ${name}, Warning ${amount} has been spent`
+}
+
+console.log(getSpendAlert())
+
+/*when to use brackets
+ 1 parameter - brackets not needed
+ 0 or 2 more parameters : brackets needed
+
+ when to use {} + return
+return one line of code without curly braces or the return keyword
+more*/
+
+//more complicted logics
+
+const speedAlert = (speedlimit,speed) =>{
+    if (speed > speedlimit){
+        return`you are going over the speedlimit ${speedlimit}`
+
+    }
+        
+}
+
+console.log(speedAlert(40,60))
+console.log(`end`)
+
+const distanceTravelledMiles = [267,456,321]
+
+const distacetoKm = distanceTravelledMiles.map(distance => Math.round(distance*1.6))
+console.log(distacetoKm)
+
+
+//.reduce() syntax
+/*const numbers = [10, 20, 30];
+const sum = numbers.reduce((acc, cur) => acc + cur, 0);
+
+console.log(sum); // 60
+
+acc = the value which gets summed, or the variable sum is stored in
+cur = current value which is added in the accumulator
+
+ */
+
+
+
+function calculatetotal(itemsbrought){
+    const total = itemsbrought.reduce ((acc,cur) => acc + cur.price , 0)
+    return total
+    
+}
+
+console.log(calculatetotal(itemsbrought))
+console.log("price")
+
+
+
+
 
