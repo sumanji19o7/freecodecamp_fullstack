@@ -1,5 +1,5 @@
 
-
+//post request on the api with method post, body has title,userid and body and header
 try{
     const response = await fetch ('https://apis.scrimba.com/jsonplaceholder/posts', {
         method : 'POST',
@@ -37,8 +37,8 @@ finally{
 //Promise constructor
 
 //Building own async functions
-
-const promise = new Promise((resolve , reject)=>{  //a promise is sent created , which maybe fulfilled or rejected
+function createPromise(){
+    return new Promise((resolve , reject)=>{  //a promise is sent created , which maybe fulfilled or rejected
     const success = Math.random() > 0.5
     if (success){       //if the random value if true 
         resolve("operation successful")//resolve passes the value to promise which is operation successful
@@ -47,10 +47,15 @@ const promise = new Promise((resolve , reject)=>{  //a promise is sent created ,
         reject("operation failed")//if the value is false the value to promise is operation failed
     }
 })
+}
+
 
 try {
-    const response = await promise  //try block collects the value of promise in the response variable
-    console.log(response)
+    const promise1 = createPromise()
+    const promise2 = createPromise()
+    const promise3 = createPromise()
+    const result = await Promise.all([promise1,promise2,promise3])
+    console.log(result)
 }
 
 catch(error){
@@ -156,3 +161,7 @@ catch(error){
     console.log(error)
 
 }
+
+//promise.all
+
+
