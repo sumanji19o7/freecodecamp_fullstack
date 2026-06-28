@@ -1,0 +1,29 @@
+body{
+    font-family: sans-serif;
+    text-align: center;
+}
+
+h1{
+    font-size: 50px;
+}
+
+#ticker-input, #submit-ticker{
+    font-size: 30px;
+    border: 5px black solid;
+
+}
+
+p{
+    font-size: 25px;
+}
+
+#report-button{
+    font-size: 30px;
+    background-color: rgb(105, 238, 105);
+    margin-top: 10px;
+}
+
+#report-button:disabled{
+    color: rgba(71, 189, 71, 0.498);
+
+}
