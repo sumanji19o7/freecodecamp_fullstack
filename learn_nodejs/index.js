@@ -1,6 +1,7 @@
 import http from "node:http"; //imported the http module of node
 import { getDataFromDB } from "./db.js";
 import { Resolver } from "node:dns";
+import { queryObjects } from "node:v8";
 
 const PORT = 7999; //this is the localhost port number
 
@@ -18,6 +19,26 @@ const filteringDestinations = (data, locationtype, locationname) => {
   });
 };
 
+const getDataFromQueryParams = (data, queryObj) => {
+  const { continent, country } = queryObj;
+
+  if (continent) {
+    data = data.filter(
+      (destination) =>
+        destination.continent.toLowerCase() === continent.toLowerCase(),
+    );
+  }
+
+  if (country) {
+    data = data.filter(
+      (destination) =>
+        destination.country.toLowerCase() === country.toLowerCase(),
+    );
+  }
+
+  return data;
+};
+
 const server = http.createServer(async (Request, Response) => {
   //the function has to be async because of the await keyword , not be use outside a async function
   const Destinations = await getDataFromDB(); //it is async function so a await has to be used
@@ -31,7 +52,10 @@ const server = http.createServer(async (Request, Response) => {
 
   if (urlObj.pathname === "/api" && Request.method === "GET") {
     //first if statement to display all objects , the whole array
-    sendJsonResponse(Response, 200, Destinations);
+    let filteredData = getDataFromQueryParams(Destinations, queryObj);
+
+    sendJsonResponse(Response, 200, filteredData);
+    sendJsonResponse(Response, 200, filteredData);
   } else if (
     Request.url.startsWith("/api/continents") &&
     Request.method === "GET"
@@ -42,12 +66,7 @@ const server = http.createServer(async (Request, Response) => {
     const continent = Request.url.split("/").pop();
     // this gives the last element after making the string an array separated by slashes
 
-    const filteredData = filteringDestinations(
-      Destinations,
-      "continent",
-      continent,
-    );
-    sendJsonResponse(Response, 200, filteredData);
+    sendJsonResponse(Response, 200, continent);
   } else {
     sendJsonResponse(Response, 404, {
       error: "not found",
